@@ -23,6 +23,7 @@ try {
     http_response_code(201);
     echo json_encode(['message' => 'Record created successfully.', 'data' => ['id' => $recordId]]);
 } catch (Throwable $exception) {
+    error_log('Record creation failed: ' . $exception->getMessage());
     http_response_code(500);
     echo json_encode(['error' => 'Unable to create record.']);
 }
