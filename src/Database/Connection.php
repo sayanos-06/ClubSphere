@@ -12,6 +12,15 @@ final class Connection
     public static function create(string $projectRoot): PDO
     {
         self::loadEnv($projectRoot . DIRECTORY_SEPARATOR . '.env');
+
+        $databaseUrl = getenv('DATABASE_URL');
+        if ($databaseUrl !== false && $databaseUrl !== '') {
+            return new PDO($databaseUrl, null, null, [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            ]);
+        }
+
         $host = getenv('DB_HOST') ?: '127.0.0.1';
         $port = getenv('DB_PORT') ?: '5432';
         $database = getenv('DB_DATABASE') ?: 'clubsphere';
