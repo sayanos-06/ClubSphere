@@ -25,5 +25,9 @@ try {
 } catch (Throwable $exception) {
     error_log('Record creation failed: ' . $exception->getMessage());
     http_response_code(500);
-    echo json_encode(['error' => 'Unable to create record.']);
+    $response = ['error' => 'Unable to create record.'];
+    if (getenv('APP_DEBUG') === 'true') {
+        $response['details'] = $exception->getMessage();
+    }
+    echo json_encode($response);
 }
