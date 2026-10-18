@@ -14,7 +14,14 @@ final class Connection
 
         $databaseUrl = getenv('DATABASE_URL');
         if ($databaseUrl !== false && $databaseUrl !== '') {
-            return new PDO($databaseUrl, null, null, [
+            $parts = parse_url($databaseUrl);
+            $host = $parts['host'] ?? '';
+            $port = $parts['port'] ?? 5432;
+            $database = ltrim($parts['path'] ?? '', '/');
+            $username = rawurldecode($parts['user'] ?? '');
+            $password = rawurldecode($parts['pass'] ?? '');
+
+            return new PDO("pgsql:host={$host};port={$port};dbname={$database}", $username, $password, [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             ]);
