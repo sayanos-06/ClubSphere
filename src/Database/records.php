@@ -22,4 +22,17 @@ final class RecordRepository
             ->query('INSERT INTO records DEFAULT VALUES RETURNING id')
             ->fetchColumn();
     }
+
+    public function all(): array
+    {
+        $statement = $this->connection->query('SELECT id FROM records ORDER BY id ASC');
+        return $statement->fetchAll();
+    }
+
+    public function delete(int $id): bool
+    {
+        $statement = $this->connection->prepare('DELETE FROM records WHERE id = :id');
+        $statement->execute(['id' => $id]);
+        return $statement->rowCount() > 0;
+    }
 }
