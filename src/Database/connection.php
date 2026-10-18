@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ClubSphere\Database;
 
 use PDO;
-use RuntimeException;
 
 final class Connection
 {
@@ -36,7 +35,7 @@ final class Connection
     private static function loadEnv(string $path): void
     {
         if (!is_file($path)) {
-            throw new RuntimeException("Environment file not found: {$path}");
+            return;
         }
         foreach (file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) as $line) {
             $line = trim($line);
