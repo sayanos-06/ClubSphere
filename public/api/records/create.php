@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__, 3) . '/src/Database/Connection.php';
-require_once dirname(__DIR__, 3) . '/src/Database/RecordRepository.php';
+require_once dirname(__DIR__, 3) . '/src/Database/connection.php';
+require_once dirname(__DIR__, 3) . '/src/Database/records.php';
 
 use ClubSphere\Database\Connection;
 use ClubSphere\Database\RecordRepository;

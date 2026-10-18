@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__) . '/src/Database/Connection.php';
+require_once dirname(__DIR__) . '/src/Database/connection.php';
 
 use ClubSphere\Database\Connection;
 
