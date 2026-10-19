@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-namespace ClubSphere\Database;
-
 use PDO;
 
 final class Connection

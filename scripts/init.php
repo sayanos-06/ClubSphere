@@ -2,12 +2,11 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__) . '/src/database/connection.php';
-
-use ClubSphere\Database\Connection;
+$rootPath = realpath(__DIR__ . '/..');
+require_once $rootPath . '/src/database/connection.php';
 
 try {
-    $connection = Connection::create(dirname(__DIR__));
+    $connection = Connection::create($rootPath);
     $connection->exec(
         'CREATE TABLE IF NOT EXISTS records (' .
         'id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY' .

@@ -2,11 +2,9 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__, 3) . '/src/database/connection.php';
-require_once dirname(__DIR__, 3) . '/src/database/records.php';
-
-use ClubSphere\Database\Connection;
-use ClubSphere\Database\RecordRepository;
+$rootPath = realpath(__DIR__ . '/../../../');
+require_once $rootPath . '/src/database/connection.php';
+require_once $rootPath . '/src/database/records.php';
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -18,8 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
 }
 
 try {
-    $connection = Connection::create(dirname(__DIR__, 3));
-    $records = (new RecordRepository($connection))->all();
+    $connection = Connection::create($rootPath);
+    $records = (new Records($connection))->all();
     echo json_encode(['data' => $records]);
 } catch (Throwable $exception) {
     error_log('Record listing failed: ' . $exception->getMessage());

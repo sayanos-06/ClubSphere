@@ -2,11 +2,9 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__, 3) . '/src/database/connection.php';
-require_once dirname(__DIR__, 3) . '/src/database/records.php';
-
-use ClubSphere\Database\Connection;
-use ClubSphere\Database\RecordRepository;
+$rootPath = realpath(__DIR__ . '/../../../');
+require_once $rootPath . '/src/database/connection.php';
+require_once $rootPath . '/src/database/records.php';
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -25,8 +23,8 @@ if ($id === false || $id === null || $id < 1) {
 }
 
 try {
-    $connection = Connection::create(dirname(__DIR__, 3));
-    $deleted = (new RecordRepository($connection))->delete($id);
+    $connection = Connection::create($rootPath);
+    $deleted = (new Records($connection))->delete($id);
 
     if (!$deleted) {
         http_response_code(404);

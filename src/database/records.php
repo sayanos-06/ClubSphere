@@ -2,11 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ClubSphere\Database;
-
 use PDO;
 
-final class RecordRepository
+final class Records
 {
     public function __construct(private readonly PDO $connection) {}
 

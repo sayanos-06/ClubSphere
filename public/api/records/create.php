@@ -2,11 +2,9 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__, 3) . '/src/database/connection.php';
-require_once dirname(__DIR__, 3) . '/src/database/records.php';
-
-use ClubSphere\Database\Connection;
-use ClubSphere\Database\RecordRepository;
+$rootPath = realpath(__DIR__ . '/../../../');
+require_once $rootPath . '/src/database/connection.php';
+require_once $rootPath . '/src/database/records.php';
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -18,8 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 try {
-    $connection = Connection::create(dirname(__DIR__, 3));
-    $recordId = (new RecordRepository($connection))->create();
+    $connection = Connection::create($rootPath);
+    $recordId = (new Records($connection))->create();
     http_response_code(201);
     echo json_encode(['message' => 'Record created successfully.', 'data' => ['id' => $recordId]]);
 } catch (Throwable $exception) {
