@@ -51,7 +51,7 @@ Open http://127.0.0.1:8091. Serve only public, never the repository root. XAMPP'
 
 ## Organizer access
 
-Set ORGANIZER_EMAIL in the Render service environment to the intended organizer's institute email, then deploy. That exact account receives organizer access when it is created or at the next container startup. Public signup never accepts a role field. This also assigns any unowned sample activities to that account.
+First create a normal student account and confirm that its owner can sign in. Then set ORGANIZER_EMAIL in the Render service environment to that confirmed account's institute email and deploy. That existing account receives organizer access at container startup. Public signup always creates a student and never accepts a role field. This also assigns any unowned sample activities to the organizer.
 
 Alternatively, from a trusted environment connected to the database, run:
 

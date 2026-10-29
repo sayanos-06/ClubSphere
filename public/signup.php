@@ -29,11 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $statement = database()->prepare('INSERT INTO students (name, admission, email, password, recovery) VALUES (?, ?, ?, ?, ?) RETURNING id');
             $statement->execute([$values['name'], $values['admission'], $values['email'], password_hash($password, PASSWORD_DEFAULT), hash('sha256', $recovery)]);
             $id = $statement->fetchColumn();
-            $organizer = strtolower(trim(getenv('ORGANIZER_EMAIL') ?: ''));
-            if ($organizer !== '' && hash_equals($organizer, $values['email'])) {
-                database()->prepare("UPDATE students SET role = 'organizer' WHERE id = ?")->execute([$id]);
-                database()->prepare('UPDATE activities SET created_by = ? WHERE sample = TRUE AND created_by IS NULL')->execute([$id]);
-            }
             session_regenerate_id(true);
             $_SESSION = ['student_id' => $id, 'active_at' => time(), 'version' => 1, 'recovery_code' => $recovery];
             flash('Your account is ready. Find an activity and make it yours.');
