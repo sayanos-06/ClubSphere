@@ -2,12 +2,20 @@ const toggles = document.querySelectorAll('[data-password]');
 for (const toggle of toggles) {
     toggle.addEventListener('click', function () {
         const field = document.getElementById(toggle.getAttribute('data-password'));
-        if (field.type === 'password') {
-            field.type = 'text';
-            toggle.textContent = 'Hide password';
-        } else {
-            field.type = 'password';
-            toggle.textContent = 'Show password';
+        const start = field.selectionStart;
+        const end = field.selectionEnd;
+        const visible = field.type === 'password';
+        const label = visible ? 'Hide password' : 'Show password';
+
+        field.type = visible ? 'text' : 'password';
+        toggle.setAttribute('aria-label', label);
+        toggle.setAttribute('title', label);
+        toggle.setAttribute('aria-pressed', String(visible));
+        toggle.querySelector('img').src = visible ? '/assets/eye_off.svg' : '/assets/eye.svg';
+        field.focus({ preventScroll: true });
+
+        if (start !== null && end !== null) {
+            field.setSelectionRange(start, end);
         }
     });
 }

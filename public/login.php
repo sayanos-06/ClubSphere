@@ -71,19 +71,27 @@ page_start('Sign in');
         </div>
         <div class="field">
             <label for="password">Password</label>
-            <input
-                id="password"
-                name="password"
-                type="password"
-                autocomplete="current-password"
-                maxlength="72"
-                required
-            >
-            <button
-                type="button"
-                class="text_button password_toggle"
-                data-password="password"
-            >Show password</button>
+            <div class="password_field">
+                <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    autocomplete="current-password"
+                    maxlength="72"
+                    required
+                >
+                <button
+                    type="button"
+                    class="password_toggle"
+                    data-password="password"
+                    aria-label="Show password"
+                    aria-controls="password"
+                    aria-pressed="false"
+                    title="Show password"
+                >
+                    <img src="/assets/eye.svg" alt="" width="20" height="20">
+                </button>
+            </div>
         </div>
         <p
             class="form_message error"

@@ -116,27 +116,53 @@ page_start($code ? 'Save your recovery code' : 'Recover your account');
             </div>
             <div class="field">
                 <label for="password">New password</label>
-                <input
-                    id="password"
-                    name="password"
-                    type="password"
-                    autocomplete="new-password"
-                    minlength="10"
-                    maxlength="72"
-                    required
-                >
+                <div class="password_field">
+                    <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        autocomplete="new-password"
+                        minlength="10"
+                        maxlength="72"
+                        required
+                    >
+                    <button
+                        type="button"
+                        class="password_toggle"
+                        data-password="password"
+                        aria-label="Show password"
+                        aria-controls="password"
+                        aria-pressed="false"
+                        title="Show password"
+                    >
+                        <img src="/assets/eye.svg" alt="" width="20" height="20">
+                    </button>
+                </div>
             </div>
             <div class="field">
                 <label for="confirm">Confirm new password</label>
-                <input
-                    id="confirm"
-                    name="confirm"
-                    type="password"
-                    autocomplete="new-password"
-                    minlength="10"
-                    maxlength="72"
-                    required
-                >
+                <div class="password_field">
+                    <input
+                        id="confirm"
+                        name="confirm"
+                        type="password"
+                        autocomplete="new-password"
+                        minlength="10"
+                        maxlength="72"
+                        required
+                    >
+                    <button
+                        type="button"
+                        class="password_toggle"
+                        data-password="confirm"
+                        aria-label="Show password"
+                        aria-controls="confirm"
+                        aria-pressed="false"
+                        title="Show password"
+                    >
+                        <img src="/assets/eye.svg" alt="" width="20" height="20">
+                    </button>
+                </div>
             </div>
             <p
                 class="form_message error"

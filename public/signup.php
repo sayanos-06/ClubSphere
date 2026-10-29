@@ -118,33 +118,54 @@ page_start('Create an account');
         </div>
         <div class="field">
             <label for="password">Password</label>
-            <input
-                id="password"
-                name="password"
-                type="password"
-                autocomplete="new-password"
-                minlength="10"
-                maxlength="72"
-                required
-            >
+            <div class="password_field">
+                <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    autocomplete="new-password"
+                    minlength="10"
+                    maxlength="72"
+                    required
+                >
+                <button
+                    type="button"
+                    class="password_toggle"
+                    data-password="password"
+                    aria-label="Show password"
+                    aria-controls="password"
+                    aria-pressed="false"
+                    title="Show password"
+                >
+                    <img src="/assets/eye.svg" alt="" width="20" height="20">
+                </button>
+            </div>
             <small>Use 10–72 characters. Choose a password unique to this portal.</small>
-            <button
-                type="button"
-                class="text_button password_toggle"
-                data-password="password"
-            >Show password</button>
         </div>
         <div class="field">
             <label for="confirm">Confirm password</label>
-            <input
-                id="confirm"
-                name="confirm"
-                type="password"
-                autocomplete="new-password"
-                minlength="10"
-                maxlength="72"
-                required
-            >
+            <div class="password_field">
+                <input
+                    id="confirm"
+                    name="confirm"
+                    type="password"
+                    autocomplete="new-password"
+                    minlength="10"
+                    maxlength="72"
+                    required
+                >
+                <button
+                    type="button"
+                    class="password_toggle"
+                    data-password="confirm"
+                    aria-label="Show password"
+                    aria-controls="confirm"
+                    aria-pressed="false"
+                    title="Show password"
+                >
+                    <img src="/assets/eye.svg" alt="" width="20" height="20">
+                </button>
+            </div>
         </div>
         <p class="muted">Read how we handle your details in our <a href="/privacy.php">privacy
                 notice</a>.</p>

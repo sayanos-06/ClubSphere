@@ -255,9 +255,36 @@ textarea {
     font-size: 13px;
     text-align: center;
 }
+.password_field {
+    position: relative;
+}
+.password_field input {
+    display: block;
+    padding-right: 54px;
+}
 .password_toggle {
-    margin-top: 7px;
-    font-size: 11px;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    width: 46px;
+    padding: 0;
+    border: 0;
+    border-radius: 0 4px 4px 0;
+    background: transparent;
+    color: #5d0207;
+    line-height: 0;
+}
+.password_toggle:hover {
+    background: #f1e6e5;
+}
+.password_toggle:focus-visible {
+    outline: 2px solid #a25b62;
+    outline-offset: 2px;
+}
+.password_toggle img {
+    display: inline-block;
+    vertical-align: middle;
 }
 .footer {
     margin-top: 70px;

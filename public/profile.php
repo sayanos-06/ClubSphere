@@ -128,38 +128,77 @@ page_start('Your account');
             >
             <div class="field">
                 <label for="current">Current password</label>
-                <input
-                    id="current"
-                    name="current"
-                    type="password"
-                    autocomplete="current-password"
-                    maxlength="72"
-                    required
-                >
+                <div class="password_field">
+                    <input
+                        id="current"
+                        name="current"
+                        type="password"
+                        autocomplete="current-password"
+                        maxlength="72"
+                        required
+                    >
+                    <button
+                        type="button"
+                        class="password_toggle"
+                        data-password="current"
+                        aria-label="Show password"
+                        aria-controls="current"
+                        aria-pressed="false"
+                        title="Show password"
+                    >
+                        <img src="/assets/eye.svg" alt="" width="20" height="20">
+                    </button>
+                </div>
             </div>
             <div class="field">
                 <label for="password">New password</label>
-                <input
-                    id="password"
-                    name="password"
-                    type="password"
-                    autocomplete="new-password"
-                    minlength="10"
-                    maxlength="72"
-                    required
-                >
+                <div class="password_field">
+                    <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        autocomplete="new-password"
+                        minlength="10"
+                        maxlength="72"
+                        required
+                    >
+                    <button
+                        type="button"
+                        class="password_toggle"
+                        data-password="password"
+                        aria-label="Show password"
+                        aria-controls="password"
+                        aria-pressed="false"
+                        title="Show password"
+                    >
+                        <img src="/assets/eye.svg" alt="" width="20" height="20">
+                    </button>
+                </div>
             </div>
             <div class="field">
                 <label for="confirm">Confirm new password</label>
-                <input
-                    id="confirm"
-                    name="confirm"
-                    type="password"
-                    autocomplete="new-password"
-                    minlength="10"
-                    maxlength="72"
-                    required
-                >
+                <div class="password_field">
+                    <input
+                        id="confirm"
+                        name="confirm"
+                        type="password"
+                        autocomplete="new-password"
+                        minlength="10"
+                        maxlength="72"
+                        required
+                    >
+                    <button
+                        type="button"
+                        class="password_toggle"
+                        data-password="confirm"
+                        aria-label="Show password"
+                        aria-controls="confirm"
+                        aria-pressed="false"
+                        title="Show password"
+                    >
+                        <img src="/assets/eye.svg" alt="" width="20" height="20">
+                    </button>
+                </div>
             </div>
             <p
                 class="form_message error"
@@ -185,14 +224,27 @@ page_start('Your account');
             >
             <div class="field">
                 <label for="current_delete">Current password</label>
-                <input
-                    id="current_delete"
-                    name="current_delete"
-                    type="password"
-                    autocomplete="current-password"
-                    maxlength="72"
-                    required
-                >
+                <div class="password_field">
+                    <input
+                        id="current_delete"
+                        name="current_delete"
+                        type="password"
+                        autocomplete="current-password"
+                        maxlength="72"
+                        required
+                    >
+                    <button
+                        type="button"
+                        class="password_toggle"
+                        data-password="current_delete"
+                        aria-label="Show password"
+                        aria-controls="current_delete"
+                        aria-pressed="false"
+                        title="Show password"
+                    >
+                        <img src="/assets/eye.svg" alt="" width="20" height="20">
+                    </button>
+                </div>
             </div>
             <div class="field">
                 <label for="confirm_delete">Type DELETE to confirm</label>
