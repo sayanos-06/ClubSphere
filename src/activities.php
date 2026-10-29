@@ -72,7 +72,7 @@ function activity_card($activity)
     ?>
     <div class="activity_card">
         <div class="card_art art_<?= escape(strtolower($activity['category'])) ?>"><span class="art_label"><?= escape(strtoupper($activity['category'])) ?></span><span class="art_initials" aria-hidden="true"><?= escape($activity['initials']) ?></span><span class="art_corner" aria-hidden="true">↗</span></div>
-        <div class="card_body"><p class="card_club"><?= escape($activity['club']) ?></p><h3><a href="/activity.php?id=<?= (int) $activity['id'] ?>"><?= escape($activity['title']) ?></a></h3><p class="card_description"><?= escape(mb_strimwidth($activity['description'], 0, 125, '…')) ?></p>
+        <div class="card_body"><p class="card_club"><?= escape($activity['club']) ?><?= $activity['sample'] ? ' · SAMPLE ACTIVITY' : '' ?></p><h3><a href="/activity.php?id=<?= (int) $activity['id'] ?>"><?= escape($activity['title']) ?></a></h3><p class="card_description"><?= escape(mb_strimwidth($activity['description'], 0, 125, '…')) ?></p>
         <p class="card_meta"><span aria-hidden="true">◷</span> <?= escape(date('D, d M', strtotime($activity['starts_at']))) ?> <span class="meta_separator">·</span> <?= escape(date('g:i A', strtotime($activity['starts_at']))) ?></p>
         <p class="card_meta"><span aria-hidden="true">⌖</span> <?= escape($activity['venue']) ?></p>
         <div class="card_bottom"><span class="seat_count" data-count="<?= (int) $activity['id'] ?>"><?= max(0, (int) $activity['capacity'] - (int) $activity['registered']) ?> places left</span><a href="/activity.php?id=<?= (int) $activity['id'] ?>">View activity ↗</a><p class="status" data-state="<?= (int) $activity['id'] ?>"><?= escape($state) ?></p></div></div>

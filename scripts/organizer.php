@@ -15,3 +15,5 @@ if (!$statement->fetchColumn()) {
     exit(1);
 }
 echo "Organizer access granted.\n";
+$statement = database()->prepare("UPDATE activities SET created_by = (SELECT id FROM students WHERE email = ?) WHERE sample = TRUE AND created_by IS NULL");
+$statement->execute([$email]);
