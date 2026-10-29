@@ -145,3 +145,12 @@ hr { border: 0; border-top: 1px solid #deded2; margin: 22px 0; }
 .registration_actions { display: inline-block; vertical-align: top; font-size: 11px; margin-top: 5px; }
 .registration_actions form { margin-top: 12px; }
 .registration_actions button { font-size: 11px; }
+.organizer_main { display: inline-block; vertical-align: top; width: 720px; max-width: 100%; margin-right: 22px; }
+.organizer_side { display: inline-block; vertical-align: top; width: 340px; max-width: 100%; }
+.organizer_side h2 { font-size: 27px; }
+.owned_activity { border-top: 1px solid #e6e4db; padding-top: 16px; margin-top: 20px; }
+.owned_activity > a { font-size: 14px; }
+.table_scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; text-align: left; font-size: 12px; }
+th, td { padding: 13px 8px; border-bottom: 1px solid #e4e3d8; vertical-align: top; }
+th { font-size: 10px; text-transform: uppercase; letter-spacing: .5px; color: #747b6a; }
