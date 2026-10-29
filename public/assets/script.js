@@ -80,7 +80,7 @@ if (registrationForm) {
         const message = document.getElementById('registration_message');
         const action = document.getElementById('registration_action');
         button.disabled = true;
-            message.textContent = 'Updating your registration…';
+        message.textContent = 'Updating your registration…';
         fetch('/register.php', {
             method: 'POST',
             headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
@@ -99,7 +99,6 @@ if (registrationForm) {
         }).then(function (data) {
             message.textContent = data.message;
             action.value = data.registered ? 'cancel' : 'register';
-            return refreshPlaces();
         }).catch(function (error) {
             message.textContent = error.message || 'Connection lost. Refresh the page to check your registration.';
         }).finally(function () {
