@@ -1,66 +1,11 @@
-# Environment and secrets
 .env
 .env.*
 !.env.example
-!.env.sample
-
-# PHP dependencies
-/vendor/
-composer.lock
-
-# Node dependencies and build output (if used by the frontend)
-/node_modules/
-/npm-debug.log*
-/yarn-debug.log*
-/yarn-error.log*
-/pnpm-debug.log*
-/dist/
-/build/
-.vite/
-
-# Runtime data and logs
 *.log
-/logs/
 /tmp/
-/cache/
-/storage/logs/
-/storage/framework/cache/
-/storage/framework/sessions/
-/storage/framework/views/
-
-# User-generated or uploaded content
-/uploads/*
-!/uploads/.gitkeep
-/storage/app/public/*
-!/storage/app/public/.gitkeep
-
-# Local databases and exports
-*.sqlite
-*.sqlite3
-*.db
-*.sql.gz
-/backups/
-
-# XAMPP/local development files
-/xampp/
-/htdocs/
-
-# IDE and editor settings
-/.idea/
+/vendor/
+/node_modules/
 /.vscode/
-*.code-workspace
-*.sublime-project
-*.sublime-workspace
-
-# Operating-system files
-.DS_Store
+/.idea/
 Thumbs.db
-desktop.ini
-
-# Temporary files
-*.tmp
-*.temp
-*.swp
-*.swo
-*~
-
+.DS_Store
