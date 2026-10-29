@@ -81,11 +81,17 @@ try {
         }
         $pdo->exec("INSERT INTO portal (name, value) VALUES ('samples', 'created')");
     }
-    $pdo->commit();
     $organizer = strtolower(trim(getenv('ORGANIZER_EMAIL') ?: ''));
+    $organizer_ready = false;
     if ($organizer !== '') {
-        $pdo->prepare("UPDATE students SET role = 'organizer' WHERE email = ?")->execute([$organizer]);
+        $access = $pdo->prepare("UPDATE students SET role = 'organizer' WHERE email = ?");
+        $access->execute([$organizer]);
+        $organizer_ready = $access->rowCount() > 0;
         $pdo->prepare('UPDATE activities SET created_by = (SELECT id FROM students WHERE email = ?) WHERE sample = TRUE AND created_by IS NULL')->execute([$organizer]);
+    }
+    $pdo->commit();
+    if ($organizer !== '') {
+        echo $organizer_ready ? "Organizer account ready.\n" : "Organizer account not found. Create the account before provisioning access.\n";
     }
     echo "ClubSphere tables are ready. Existing records were preserved.\n";
 } catch (Throwable $error) {
