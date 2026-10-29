@@ -12,7 +12,7 @@ if (!$student) {
         http_response_code(401);
         header('Content-Type: application/json');
         echo json_encode(['error' => 'Your session expired. Sign in again to continue.']);
-        exit;
+        exit();
     }
     redirect('/login.php');
 }
@@ -22,7 +22,7 @@ try {
     if ($json) {
         header('Content-Type: application/json');
         echo json_encode(['message' => $message, 'registered' => $_POST['action'] === 'register']);
-        exit;
+        exit();
     }
     flash($message);
 } catch (DomainException $error) {
@@ -30,7 +30,7 @@ try {
         http_response_code(409);
         header('Content-Type: application/json');
         echo json_encode(['error' => $error->getMessage()]);
-        exit;
+        exit();
     }
     flash($error->getMessage());
 }

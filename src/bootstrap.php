@@ -2,13 +2,23 @@
 
 date_default_timezone_set('Asia/Kolkata');
 ini_set('session.use_strict_mode', '1');
-$secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || ($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https';
-session_set_cookie_params(['lifetime' => 0, 'path' => '/', 'secure' => $secure, 'httponly' => true, 'samesite' => 'Lax']);
+$secure =
+    (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ||
+    ($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https';
+session_set_cookie_params([
+    'lifetime' => 0,
+    'path' => '/',
+    'secure' => $secure,
+    'httponly' => true,
+    'samesite' => 'Lax'
+]);
 session_start();
 header('X-Content-Type-Options: nosniff');
 header('X-Frame-Options: DENY');
 header('Referrer-Policy: strict-origin-when-cross-origin');
-header("Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'");
+header(
+    "Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+);
 header('Cache-Control: no-store');
 require_once __DIR__ . '/database.php';
 
@@ -20,7 +30,7 @@ function escape($value)
 function redirect($path)
 {
     header('Location: ' . $path, true, 303);
-    exit;
+    exit();
 }
 
 function token()
@@ -33,12 +43,19 @@ function token()
 
 function verify_token()
 {
-    if ($_SERVER['REQUEST_METHOD'] !== 'POST' || empty($_SESSION['token']) || !is_string($_POST['token'] ?? null) || !hash_equals($_SESSION['token'], $_POST['token'])) {
+    if (
+        $_SERVER['REQUEST_METHOD'] !== 'POST' ||
+        empty($_SESSION['token']) ||
+        !is_string($_POST['token'] ?? null) ||
+        !hash_equals($_SESSION['token'], $_POST['token'])
+    ) {
         http_response_code(403);
         if (str_contains($_SERVER['HTTP_ACCEPT'] ?? '', 'application/json')) {
             header('Content-Type: application/json');
-            echo json_encode(['error' => 'Your session expired. Refresh the page and sign in again.']);
-            exit;
+            echo json_encode([
+                'error' => 'Your session expired. Refresh the page and sign in again.'
+            ]);
+            exit();
         }
         exit('This request expired. Return to the previous page, refresh and try again.');
     }
@@ -58,7 +75,9 @@ function current_student()
         return null;
     }
     $_SESSION['active_at'] = time();
-    $statement = database()->prepare('SELECT id, name, admission, email, role, version FROM students WHERE id = ?');
+    $statement = database()->prepare(
+        'SELECT id, name, admission, email, role, version FROM students WHERE id = ?'
+    );
     $statement->execute([$_SESSION['student_id']]);
     $student = $statement->fetch() ?: null;
     if ($student && (int) $student['version'] !== (int) ($_SESSION['version'] ?? 0)) {
@@ -79,7 +98,7 @@ function require_student($organizer = false)
         page_start('Access restricted');
         echo '<div class="empty"><h1>Organizer access required</h1><p>This area is available to authorized club organizers.</p><a class="button" href="/index.php">Browse activities</a></div>';
         page_end();
-        exit;
+        exit();
     }
     return $student;
 }
