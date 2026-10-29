@@ -63,3 +63,85 @@ textarea { min-height: 150px; resize: vertical; }
 .paper h2 { font-size: 26px; }
 .prose { max-width: 780px; margin: 45px auto; }
 .prose h2 { margin-top: 35px; }
+.hero { padding: 58px 0 42px; }
+.hero_copy { display: inline-block; width: 590px; max-width: 100%; vertical-align: middle; padding: 14px 30px 14px 0; }
+.hero h1 { font-size: 66px; letter-spacing: -2.5px; margin-bottom: 22px; }
+.hero h1 em { color: #862b36; font-weight: 400; }
+.hero_description { max-width: 465px; color: #686c61; line-height: 1.8; margin-bottom: 28px; }
+.hero_link { margin: 15px 20px; display: inline-block; color: #494e43; font-size: 12px; }
+.hero_note { font-size: 10px; color: #86877c; margin-top: 24px; }
+.tiny_dot { margin-right: 8px; color: #9b6548; }
+.hero_visual { display: inline-block; vertical-align: middle; width: 455px; max-width: 100%; padding: 25px 28px; background: #e9e6db; border: 1px solid #dedbcf; color: #505747; margin: 10px 0; }
+.visual_top, .visual_bottom { font-size: 9px; letter-spacing: 1.5px; }
+.visual_top span, .visual_bottom span { float: right; }
+.orbit { width: 250px; max-width: 100%; height: 250px; padding: 66px 12px; margin: 24px auto 20px; border: 1px solid #8a917c; border-radius: 50%; text-align: center; background: #e0e2d4; }
+.orbit_center { display: inline-block; font-family: Georgia, serif; font-size: 38px; line-height: 1.2; color: #4b5442; }
+.orbit_center em { color: #862b36; }
+.visual_tags { text-align: center; padding-bottom: 26px; }
+.visual_tags span { border: 1px solid #b6baaa; border-radius: 30px; padding: 5px 10px; margin: 3px; display: inline-block; font-size: 8px; letter-spacing: 1.2px; }
+.visual_bottom { border-top: 1px solid #c9ccbf; padding-top: 15px; }
+.campus_strip { padding: 20px 0; border-top: 1px solid #deddd3; border-bottom: 1px solid #deddd3; }
+.campus_strip > div { display: inline-block; margin: 8px 38px 8px 0; color: #7e8174; font-size: 12px; }
+.campus_strip strong { font-family: Georgia, serif; font-size: 27px; font-weight: 400; color: #3c4237; margin-right: 8px; }
+.section_heading { padding: 42px 0 10px; }
+.section_heading .eyebrow { margin-bottom: 10px; }
+.section_heading h2 { margin-bottom: 12px; font-size: 38px; letter-spacing: -.6px; }
+.filters { padding: 18px; border: 1px solid #e2dfd5; background: #f4f2eb; border-radius: 5px; }
+.search_field, .filter_field { display: inline-block; vertical-align: bottom; margin: 5px 10px 5px 0; max-width: 100%; }
+.search_field { width: 310px; }
+.filter_field { width: 155px; }
+.filters > button { margin: 5px 0; vertical-align: bottom; padding: 12px 15px; }
+.filters label { font-size: 10px; color: #6f7367; }
+.filters input, .filters select { font-size: 12px; }
+.results_line { margin: 22px 0; color: #828578; font-size: 11px; }
+.results_line a { float: right; }
+.cards { margin: 0 -8px; }
+.activity_card { display: inline-block; vertical-align: top; margin: 0 8px 24px; width: 365px; max-width: 95%; background: #fffefa; border: 1px solid #e0dfd6; border-radius: 6px; overflow: hidden; }
+.card_art { padding: 15px 22px 0; height: 138px; overflow: hidden; }
+.art_technical { background: #e0e4d9; color: #536348; }
+.art_cultural { background: #eddcce; color: #8e5740; }
+.art_creative { background: #eadcda; color: #844f52; }
+.art_literary { background: #ece5d2; color: #847347; }
+.art_sports { background: #dde5df; color: #4f6a58; }
+.art_label { font-size: 8px; letter-spacing: 2px; display: block; }
+.art_initials { display: inline-block; font-family: Georgia, serif; font-size: 84px; font-style: italic; line-height: 1.5; letter-spacing: -7px; opacity: .7; }
+.art_corner { float: right; font-size: 38px; margin-top: 18px; }
+.card_body { padding: 23px; }
+.card_club { margin-bottom: 8px; color: #862b36; font-size: 10px; font-weight: bold; letter-spacing: .6px; }
+.card_body h3 { margin-bottom: 12px; min-height: 56px; font-family: Georgia, serif; font-weight: 400; font-size: 23px; }
+.card_body h3 a { color: #31372d; }
+.card_description { color: #7e8175; font-size: 12px; min-height: 60px; }
+.card_meta { font-size: 11px; margin: 7px 0; color: #656c5e; }
+.card_meta > span { margin-right: 6px; }
+.card_bottom { border-top: 1px solid #eeece4; padding-top: 16px; margin-top: 18px; font-size: 10px; }
+.seat_count { color: #4f6444; font-size: 12px; }
+.card_bottom > a { float: right; }
+.status { font-size: 10px; margin: 6px 0 0; color: #787b70; }
+.join_banner { background: #eceee3; border: 1px solid #dce0d1; padding: 36px; margin-top: 45px; border-radius: 5px; }
+.join_banner h2 { color: #48533d; font-size: 37px; margin-bottom: 16px; }
+.join_banner p { color: #76806a; font-size: 13px; }
+.join_banner .eyebrow { color: #68775b; font-size: 9px; }
+.club_card { display: inline-block; vertical-align: top; width: 365px; max-width: 95%; margin: 8px 8px 22px; padding: 26px; background: #fffefa; border: 1px solid #e0dfd6; border-radius: 5px; }
+.club_monogram { display: inline-block; font-family: Georgia, serif; font-size: 27px; padding: 10px; margin-bottom: 24px; }
+.club_card h2 { font-size: 29px; }
+.club_card p:not(.eyebrow) { font-size: 13px; color: #767c6e; min-height: 65px; }
+.club_card a { font-size: 12px; }
+.breadcrumb { margin: 32px 0; font-size: 12px; color: #86897d; }
+.activity_detail { display: inline-block; vertical-align: top; width: 670px; max-width: 100%; padding-right: 40px; }
+.activity_detail h1 { font-size: 50px; }
+.description { color: #626b59; line-height: 1.9; margin: 28px 0 40px; white-space: normal; overflow-wrap: anywhere; }
+.booking { display: inline-block; vertical-align: top; width: 350px; max-width: 100%; }
+.booking h2 { margin-bottom: 12px; font-size: 35px; }
+.booking p { font-size: 13px; }
+hr { border: 0; border-top: 1px solid #deded2; margin: 22px 0; }
+.detail_link { display: block; font-size: 12px; margin: 17px 0; }
+.registration_row { padding: 25px; }
+.date_tile { display: inline-block; width: 75px; text-align: center; margin-right: 24px; padding: 10px; vertical-align: top; color: #862b36; background: #f1e8e3; font-size: 11px; }
+.date_tile strong { display: block; font-family: Georgia, serif; font-size: 32px; font-weight: 400; line-height: 1.2; }
+.registration_info { display: inline-block; vertical-align: top; width: 65%; max-width: 100%; }
+.registration_info h3 { margin-bottom: 7px; font-family: Georgia, serif; font-weight: 400; font-size: 24px; }
+.registration_info h3 a { color: #30372c; }
+.badge { display: inline-block; font-size: 10px; padding: 3px 9px; background: #ebefdf; color: #576d46; border-radius: 3px; }
+.registration_actions { display: inline-block; vertical-align: top; font-size: 11px; margin-top: 5px; }
+.registration_actions form { margin-top: 12px; }
+.registration_actions button { font-size: 11px; }
