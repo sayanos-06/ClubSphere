@@ -1,0 +1,65 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #fbfaf7; color: #292924; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 1.65; }
+a { color: #862b36; text-decoration: none; }
+a:hover { text-decoration: underline; }
+button, input, select, textarea { font: inherit; }
+button, a, input, select, textarea { outline-offset: 4px; }
+button { cursor: pointer; }
+button:disabled { cursor: default; opacity: .6; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; line-height: 1.12; }
+h1 { font-size: 46px; margin-bottom: 20px; }
+h2 { font-size: 32px; }
+h3 { font-size: 20px; line-height: 1.4; }
+.container { max-width: 1232px; width: 92%; margin: 0 auto; }
+.institute { padding: 9px 0; color: #f8efe7; background: #702733; font-size: 10px; letter-spacing: 1.8px; }
+.institute_right { float: right; letter-spacing: 1.4px; }
+.header { padding: 22px 0; border-bottom: 1px solid #e4e0d8; background: #fffefa; }
+.brand { display: inline-block; vertical-align: middle; font-family: Georgia, serif; font-size: 30px; font-weight: bold; color: #292924; line-height: 1.4; margin-right: 36px; }
+.brand:hover { text-decoration: none; }
+.brand_dot { color: #862b36; }
+.brand_mark { display: inline-block; background: #862b36; color: #fffaf3; width: 40px; height: 40px; text-align: center; border-radius: 50%; font-size: 35px; line-height: 35px; margin-right: 8px; }
+.brand_mark span { color: #d7ae70; font-size: 25px; vertical-align: top; }
+.nav { display: inline-block; vertical-align: middle; }
+.nav > a, .nav > form { margin: 6px 12px; display: inline-block; }
+.nav > a { color: #595b52; font-size: 13px; }
+.nav > a.active { color: #862b36; border-bottom: 2px solid #862b36; }
+.nav .button { color: #fffaf3; }
+.button, button.primary { display: inline-block; border: 1px solid #862b36; padding: 12px 22px; background: #862b36; color: #fffaf3; border-radius: 4px; font-size: 13px; font-weight: bold; text-align: center; }
+.button:hover, button.primary:hover { background: #6d202c; text-decoration: none; }
+.button.secondary { background: transparent; color: #862b36; }
+.button.secondary:hover { background: #f1e6e5; }
+.button.small { padding: 9px 15px; }
+.text_button { background: transparent; border: 0; padding: 0; color: #862b36; font-size: 13px; text-decoration: underline; }
+.inline { display: inline-block; }
+.eyebrow { color: #862b36; letter-spacing: 2px; font-size: 10px; font-weight: bold; margin-bottom: 18px; }
+.muted { color: #73746a; font-size: 13px; }
+.notice { padding: 15px 20px; margin: 24px 0; background: #ecf0e5; border: 1px solid #d0d9bf; border-radius: 4px; color: #3d5136; }
+.error { padding: 14px 18px; background: #f6e7e5; color: #842b32; border: 1px solid #e8c9c7; border-radius: 4px; margin-bottom: 22px; }
+.auth { max-width: 480px; margin: 64px auto 84px; padding: 35px; background: #fffefa; border: 1px solid #e4e0d8; border-radius: 6px; }
+.auth h1 { font-size: 38px; }
+label { display: block; font-size: 12px; font-weight: bold; margin-bottom: 6px; }
+input, select, textarea { width: 100%; padding: 11px 13px; color: #292924; background: #fffefa; border: 1px solid #d2cfc5; border-radius: 4px; }
+input:focus, select:focus, textarea:focus { outline: 2px solid #a25b62; }
+textarea { min-height: 150px; resize: vertical; }
+.field { margin-bottom: 19px; }
+.field small { display: block; margin-top: 5px; color: #73746a; font-size: 11px; }
+.wide { width: 100%; }
+.form_footer { margin: 22px 0 0; font-size: 13px; text-align: center; }
+.password_toggle { margin-top: 7px; font-size: 11px; }
+.footer { margin-top: 70px; padding: 35px 0; background: #f2f0e9; border-top: 1px solid #e1ded4; }
+.footer_brand, .footer_links { display: inline-block; vertical-align: top; margin-right: 30px; }
+.footer_brand strong { font-family: Georgia, serif; font-size: 25px; }
+.footer_brand p, .footer_links p { font-size: 11px; color: #77776e; margin: 6px 0; }
+.footer_links { margin-top: 4px; }
+.footer_links a { margin-right: 23px; font-size: 12px; color: #585b51; }
+.empty { padding: 65px 25px; text-align: center; }
+.empty p { color: #73746a; }
+.skip { display: block; height: 0; overflow: hidden; }
+.skip:focus { height: auto; padding: 10px; }
+.page_intro { padding: 50px 0 25px; }
+.page_intro p { max-width: 640px; color: #73746a; }
+.paper { padding: 28px; background: #fffefa; border: 1px solid #e4e0d8; border-radius: 5px; margin-bottom: 22px; }
+.paper h2 { font-size: 26px; }
+.prose { max-width: 780px; margin: 45px auto; }
+.prose h2 { margin-top: 35px; }
