@@ -63,7 +63,7 @@ This promotes that existing account and assigns any unowned sample activities to
 
 ## Render deployment
 
-The clubsphere service deploys the main branch automatically using the Dockerfile. It runs in Singapore on the free plan alongside the existing database. The container applies setup, runs the database checks and starts Apache on Render's PORT. Configure an HTTP health check at /health.php in Render settings.
+The clubsphere service deploys the main branch automatically using the Dockerfile. It runs in Singapore on the free plan alongside the existing database. The container applies setup, runs the database checks and starts Apache on Render's PORT. Its HTTP health check is configured at /health.php.
 
 Environment keys:
 
