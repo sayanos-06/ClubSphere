@@ -22,7 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } elseif (strlen($password) < 10 || strlen($password) > 72 || $password !== ($_POST['confirm'] ?? '')) {
             $error = 'New passwords must match and have 10–72 characters.';
         } else {
-            database()->prepare('UPDATE students SET password = ? WHERE id = ?')->execute([password_hash($password, PASSWORD_DEFAULT), $student['id']]);
+            database()->prepare('UPDATE students SET password = ?, version = version + 1 WHERE id = ?')->execute([password_hash($password, PASSWORD_DEFAULT), $student['id']]);
+            $_SESSION['version'] = (int) $student['version'] + 1;
             session_regenerate_id(true);
             unset($_SESSION['token']);
             flash('Your password has been changed.');

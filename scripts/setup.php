@@ -49,6 +49,8 @@ try {
     $pdo->exec('CREATE INDEX IF NOT EXISTS registrations_activity ON registrations(activity_id)');
     $pdo->exec('CREATE INDEX IF NOT EXISTS activities_date ON activities(starts_at)');
     $pdo->exec('ALTER TABLE activities ADD COLUMN IF NOT EXISTS sample BOOLEAN NOT NULL DEFAULT FALSE');
+    $pdo->exec('ALTER TABLE students ADD COLUMN IF NOT EXISTS recovery VARCHAR(64)');
+    $pdo->exec('ALTER TABLE students ADD COLUMN IF NOT EXISTS version INTEGER NOT NULL DEFAULT 1');
     $clubs = [
         ['Cyberlabs', 'Technical', 'A community for curious minds who code, create and solve problems together.', 'CY'],
         ['Robotics Club', 'Technical', 'From first circuits to working robots. Learn by making things move.', 'RC'],

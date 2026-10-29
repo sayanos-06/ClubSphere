@@ -25,13 +25,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = 'The passwords do not match.';
     } else {
         try {
-            $statement = database()->prepare('INSERT INTO students (name, admission, email, password) VALUES (?, ?, ?, ?) RETURNING id');
-            $statement->execute([$values['name'], $values['admission'], $values['email'], password_hash($password, PASSWORD_DEFAULT)]);
+            $recovery = bin2hex(random_bytes(16));
+            $statement = database()->prepare('INSERT INTO students (name, admission, email, password, recovery) VALUES (?, ?, ?, ?, ?) RETURNING id');
+            $statement->execute([$values['name'], $values['admission'], $values['email'], password_hash($password, PASSWORD_DEFAULT), hash('sha256', $recovery)]);
             $id = $statement->fetchColumn();
             session_regenerate_id(true);
-            $_SESSION = ['student_id' => $id, 'active_at' => time()];
+            $_SESSION = ['student_id' => $id, 'active_at' => time(), 'version' => 1, 'recovery_code' => $recovery];
             flash('Your account is ready. Find an activity and make it yours.');
-            redirect('/index.php');
+            redirect('/recovery.php');
         } catch (PDOException $exception) {
             if ($exception->getCode() !== '23505') {
                 throw $exception;

@@ -53,9 +53,13 @@ function current_student()
         return null;
     }
     $_SESSION['active_at'] = time();
-    $statement = database()->prepare('SELECT id, name, admission, email, role FROM students WHERE id = ?');
+    $statement = database()->prepare('SELECT id, name, admission, email, role, version FROM students WHERE id = ?');
     $statement->execute([$_SESSION['student_id']]);
     $student = $statement->fetch() ?: null;
+    if ($student && (int) $student['version'] !== (int) ($_SESSION['version'] ?? 0)) {
+        $_SESSION = [];
+        $student = null;
+    }
     return $student;
 }
 

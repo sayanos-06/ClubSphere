@@ -104,6 +104,10 @@ if (registrationForm) {
             message.textContent = error.message || 'Connection lost. Refresh the page to check your registration.';
         }).finally(function () {
             button.disabled = false;
+            refreshPlaces();
         });
     });
+}
+if (document.querySelector('[data-count]')) {
+    window.addEventListener('focus', refreshPlaces);
 }

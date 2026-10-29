@@ -155,3 +155,4 @@ table { width: 100%; border-collapse: collapse; text-align: left; font-size: 12p
 th, td { padding: 13px 8px; border-bottom: 1px solid #e4e3d8; vertical-align: top; }
 th { font-size: 10px; text-transform: uppercase; letter-spacing: .5px; color: #747b6a; }
 .sample_notice { padding: 12px 18px; background: #f3ecdc; border: 1px solid #e3d5b4; font-size: 12px; color: #786332; margin-bottom: 25px; }
+.recovery_code { padding: 16px; background: #f0eee5; border: 1px solid #dfdcd0; font-family: monospace; font-size: 16px; overflow-wrap: anywhere; }
