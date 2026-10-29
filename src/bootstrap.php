@@ -33,8 +33,13 @@ function token()
 
 function verify_token()
 {
-    if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !is_string($_POST['token'] ?? null) || !hash_equals($_SESSION['token'] ?? '', $_POST['token'])) {
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST' || empty($_SESSION['token']) || !is_string($_POST['token'] ?? null) || !hash_equals($_SESSION['token'], $_POST['token'])) {
         http_response_code(403);
+        if (str_contains($_SERVER['HTTP_ACCEPT'] ?? '', 'application/json')) {
+            header('Content-Type: application/json');
+            echo json_encode(['error' => 'Your session expired. Refresh the page and sign in again.']);
+            exit;
+        }
         exit('This request expired. Return to the previous page, refresh and try again.');
     }
 }

@@ -80,7 +80,7 @@ if (registrationForm) {
         const message = document.getElementById('registration_message');
         const action = document.getElementById('registration_action');
         button.disabled = true;
-        message.textContent = 'Saving your place…';
+            message.textContent = 'Updating your registration…';
         fetch('/register.php', {
             method: 'POST',
             headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
