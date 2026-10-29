@@ -51,7 +51,9 @@ Open http://127.0.0.1:8091. Serve only public, never the repository root. XAMPP'
 
 ## Organizer access
 
-Create a normal student account with the intended institute email. From a trusted environment connected to the database, run:
+Set ORGANIZER_EMAIL in the Render service environment to the intended organizer's institute email, then deploy. That exact account receives organizer access when it is created or at the next container startup. Public signup never accepts a role field. This also assigns any unowned sample activities to that account.
+
+Alternatively, from a trusted environment connected to the database, run:
 
 ```text
 php scripts/organizer.php student@iitism.ac.in
@@ -68,6 +70,7 @@ Environment keys:
 - DATABASE_URL: existing database internal connection URL, with sslmode=require.
 - APP_ENV: production.
 - SAMPLE_ACTIVITIES: true for the initial demonstration content.
+- ORGANIZER_EMAIL: the authorized organizer's institute email, when ready.
 
 Render's free web service may need time to wake after inactivity. The existing free database is scheduled to expire on 15 November 2026; upgrade or migrate it before then to retain service availability. No paid resources were created.
 

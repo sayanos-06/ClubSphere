@@ -82,6 +82,11 @@ try {
         $pdo->exec("INSERT INTO portal (name, value) VALUES ('samples', 'created')");
     }
     $pdo->commit();
+    $organizer = strtolower(trim(getenv('ORGANIZER_EMAIL') ?: ''));
+    if ($organizer !== '') {
+        $pdo->prepare("UPDATE students SET role = 'organizer' WHERE email = ?")->execute([$organizer]);
+        $pdo->prepare('UPDATE activities SET created_by = (SELECT id FROM students WHERE email = ?) WHERE sample = TRUE AND created_by IS NULL')->execute([$organizer]);
+    }
     echo "ClubSphere tables are ready. Existing records were preserved.\n";
 } catch (Throwable $error) {
     $pdo->rollBack();
