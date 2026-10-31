@@ -287,14 +287,14 @@ page_start('Organizer workspace');
                 <button
                     class="primary"
                     type="submit"
-                ><?= $id ? 'Save activity' : 'Publish activity ↗' ?></button>
+                ><?= $id ? 'Save activity' : 'Publish activity' ?></button>
             </form>
         <?php else: ?>
             <p class="notice">This activity is <?= escape(strtolower(activity_state($activity))) ?>. Its details are preserved.</p>
         <?php endif; ?>
         <?php if ($activity): ?>
             <p>
-                <a href="/activity.php?id=<?= $id ?>">View student activity page ↗</a>
+                <a href="/activity.php?id=<?= $id ?>">View student activity page</a>
             </p>
             <?php if (!$activity['cancelled'] && strtotime($activity['ends_at']) > time()): ?>
                 <form method="post">

@@ -177,7 +177,7 @@ page_start('Create an account');
         <button
             class="primary wide"
             type="submit"
-        >Create account →</button>
+        >Create account</button>
     </form>
     <p class="form_footer">Already part of the community? <a href="/login.php">Sign in</a>
     </p>

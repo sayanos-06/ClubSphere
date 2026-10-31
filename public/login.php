@@ -101,7 +101,7 @@ page_start('Sign in');
         <button
             class="primary wide"
             type="submit"
-        >Sign in →</button>
+        >Sign in</button>
     </form>
     <p class="form_footer">New here? <a href="/signup.php">Create your account</a>
     </p>

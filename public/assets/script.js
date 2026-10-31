@@ -75,7 +75,7 @@ function refreshPlaces() {
                           ? 'Cancel my registration'
                           : activity.remaining === 0
                             ? 'Activity full'
-                            : 'Reserve my place →';
+                            : 'Reserve my place';
                 }
             }
             if (message) {

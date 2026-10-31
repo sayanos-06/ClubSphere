@@ -93,7 +93,7 @@ function page_start($title, $active = '')
                         <a
                             class="button small"
                             href="/signup.php"
-                        >Join ClubSphere <span aria-hidden="true">↗</span>
+                        >Join ClubSphere
                         </a>
                     <?php endif; ?>
                 </nav>
@@ -129,7 +129,7 @@ function page_end()
                         href="https://iitism.ac.in"
                         target="_blank"
                         rel="noopener"
-                    >IIT (ISM) Dhanbad ↗</a>
+                    >IIT (ISM) Dhanbad</a>
                     <p>Student project · IIT (ISM) Dhanbad · <?= date('Y') ?></p>
                 </div>
             </div>

@@ -20,7 +20,7 @@ page_start('The clubs', 'clubs');
             <p class="eyebrow"><?= escape($club['category']) ?></p>
             <h2><?= escape($club['name']) ?></h2>
             <p><?= escape($club['description']) ?></p>
-            <a href="/index.php?club=<?= (int) $club['id'] ?>#activities"><?= (int) $club['upcoming'] ?> upcoming activities ↗</a>
+            <a href="/index.php?club=<?= (int) $club['id'] ?>#activities"><?= (int) $club['upcoming'] ?> upcoming activities</a>
         </div>
     <?php endforeach; ?>
 </div>

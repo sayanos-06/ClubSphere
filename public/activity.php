@@ -25,7 +25,7 @@ $state = activity_state($activity);
 page_start($activity['title'], 'activities');
 ?>
 <p class="breadcrumb">
-    <a href="/index.php#activities">← All activities</a> / <?= escape($activity['club']) ?>
+    <a href="/index.php#activities">All activities</a> / <?= escape($activity['club']) ?>
 </p>
 <?php if ($activity['sample']): ?>
     <div class="sample_notice">Sample activity · For project demonstration. This is not a scheduled
@@ -73,7 +73,7 @@ page_start($activity['title'], 'activities');
         <a
             class="button wide"
             href="/login.php"
-        >Sign in to register →</a>
+        >Sign in to register</a>
     <?php elseif (in_array($state, ['Open', 'Full'], true)): ?>
         <form
             method="post"
@@ -97,7 +97,7 @@ page_start($activity['title'], 'activities');
                 id="registration_button"
                 type="submit"
                 <?= !$registration && $state === 'Full' ? 'disabled' : '' ?>
-            ><?= $registration ? 'Cancel my registration' : ($state === 'Full' ? 'Activity full' : 'Reserve my place →') ?></button>
+            ><?= $registration ? 'Cancel my registration' : ($state === 'Full' ? 'Activity full' : 'Reserve my place') ?></button>
         </form>
     <?php else: ?>
         <p class="notice">Registration is closed.</p>
@@ -106,13 +106,13 @@ page_start($activity['title'], 'activities');
         <a
             class="detail_link"
             href="/registrations.php"
-        >View my registrations ↗</a>
+        >View my registrations</a>
     <?php endif; ?>
     <?php if ($student && $student['role'] === 'organizer' && (int) $activity['created_by'] === (int) $student['id']): ?>
         <a
             class="detail_link"
             href="/manage.php?id=<?= $id ?>"
-        >Manage this activity ↗</a>
+        >Manage this activity</a>
     <?php endif; ?>
     <p class="muted">No fee is collected through this portal.</p>
 </div>

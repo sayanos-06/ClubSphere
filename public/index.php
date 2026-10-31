@@ -55,12 +55,12 @@ page_start('Discover your campus', 'activities');
         <a
             class="button"
             href="#activities"
-        >Explore activities <span aria-hidden="true">↓</span>
+        >Explore activities
         </a>
         <a
             class="hero_link"
             href="/clubs.php"
-        >Meet the clubs ↗</a>
+        >Meet the clubs</a>
         <p class="hero_note">For the curious. The creative. The yet-to-figure-it-out.</p>
     </div>
     <div
@@ -80,7 +80,7 @@ page_start('Discover your campus', 'activities');
             <span>CONNECT</span>
             <span>EXPLORE</span>
         </div>
-        <div class="visual_bottom">IIT (ISM) DHANBAD <span>↗</span>
+        <div class="visual_bottom">IIT (ISM) DHANBAD
         </div>
     </div>
 </div>
@@ -185,7 +185,7 @@ page_start('Discover your campus', 'activities');
         <a
             class="button secondary"
             href="<?= $search || $category || $club ? '/index.php#activities' : '/clubs.php' ?>"
-        ><?= $search || $category || $club ? 'Reset your search' : 'Discover the clubs ↗' ?></a>
+        ><?= $search || $category || $club ? 'Reset your search' : 'Discover the clubs' ?></a>
     </div>
 <?php endif; ?>
 <p
@@ -197,7 +197,7 @@ page_start('Discover your campus', 'activities');
     id="refresh_places"
     type="button"
     class="text_button"
->Refresh availability ↻</button>
+>Refresh availability</button>
 <div class="join_banner">
     <p class="eyebrow">YOUR NEXT CHAPTER</p>
     <h2>There’s more to campus
@@ -207,6 +207,6 @@ page_start('Discover your campus', 'activities');
     <a
         class="button"
         href="<?= current_student() ? '/clubs.php' : '/signup.php' ?>"
-    ><?= current_student() ? 'Find a community ↗' : 'Make yourself at home ↗' ?></a>
+    ><?= current_student() ? 'Find a community' : 'Make yourself at home' ?></a>
 </div>
 <?php page_end(); ?>

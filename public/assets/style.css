@@ -577,11 +577,6 @@ textarea {
     letter-spacing: -7px;
     opacity: 0.7;
 }
-.art_corner {
-    float: right;
-    font-size: 38px;
-    margin-top: 18px;
-}
 .card_body {
     padding: 23px;
 }

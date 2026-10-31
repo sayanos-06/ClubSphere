@@ -49,7 +49,7 @@ page_start('My registrations', 'registrations');
         <a
             class="button"
             href="/index.php#activities"
-        >Explore activities ↗</a>
+        >Explore activities</a>
     </div>
 <?php endif; ?>
 <?php foreach ($registrations as $registration): ?>
@@ -67,7 +67,7 @@ page_start('My registrations', 'registrations');
             <span class="muted"> Reference CS-<?= (int) $registration['registration_id'] ?></span>
         </div>
         <div class="registration_actions">
-            <a href="/activity.php?id=<?= (int) $registration['id'] ?>">View details ↗</a>
+            <a href="/activity.php?id=<?= (int) $registration['id'] ?>">View details</a>
             <?php if (!$registration['cancelled'] && strtotime($registration['starts_at']) > time()): ?>
                 <form
                     method="post"

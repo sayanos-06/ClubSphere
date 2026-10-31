@@ -77,7 +77,7 @@ page_start($code ? 'Save your recovery code' : 'Recover your account');
         <a
             class="button wide"
             href="<?= current_student() ? '/index.php' : '/login.php' ?>"
-        ><?= current_student() ? 'I’ve saved it · discover activities →' : 'I’ve saved it · sign in →' ?></a>
+        ><?= current_student() ? 'I’ve saved it · discover activities' : 'I’ve saved it · sign in' ?></a>
     <?php else: ?>
         <h1>Let’s get you back in.</h1>
         <p class="muted">Enter your institute email and the recovery code you saved when you created

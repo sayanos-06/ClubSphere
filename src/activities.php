@@ -86,10 +86,7 @@ function activity_card($activity)
             class="art_initials"
             aria-hidden="true"
         ><?= escape($activity['initials']) ?></span>
-        <span
-            class="art_corner"
-            aria-hidden="true"
-        >↗</span>
+
     </div>
     <div class="card_body">
         <p class="card_club"><?= escape($activity['club']) ?><?= $activity['sample'] ? ' · SAMPLE ACTIVITY' : '' ?></p>
@@ -109,7 +106,7 @@ function activity_card($activity)
                 class="seat_count"
                 data-count="<?= (int) $activity['id'] ?>"
             ><?= max(0, (int) $activity['capacity'] - (int) $activity['registered']) ?> places left</span>
-            <a href="/activity.php?id=<?= (int) $activity['id'] ?>">View activity ↗</a>
+            <a href="/activity.php?id=<?= (int) $activity['id'] ?>">View activity</a>
             <p
                 class="status"
                 data-state="<?= (int) $activity['id'] ?>"
