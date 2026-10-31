@@ -26,7 +26,7 @@ function page_start($title, $active = '')
         <title><?= escape($title) ?> | ClubSphere</title>
         <link
             rel="icon"
-            href="/assets/favicon.svg"
+            href="<?= escape(asset_url('assets/favicon.svg')) ?>"
             type="image/svg+xml"
         >
         <link
@@ -50,8 +50,13 @@ function page_start($title, $active = '')
                     class="brand"
                     href="/index.php"
                 >
-                    <span class="brand_mark">c<span>•</span>
-                    </span> ClubSphere<span class="brand_dot">.</span>
+                    <img
+                        class="brand_logo"
+                        src="<?= escape(asset_url('assets/logo.png')) ?>"
+                        alt="ClubSphere"
+                        width="300"
+                        height="100"
+                    >
                 </a>
                 <nav
                     class="nav"
@@ -119,7 +124,16 @@ function page_end()
         <footer class="footer">
             <div class="container">
                 <div class="footer_brand">
-                    <strong>ClubSphere.</strong>
+                    <a href="/index.php" aria-label="ClubSphere home">
+                        <img
+                            class="footer_logo"
+                            src="<?= escape(asset_url('assets/logo.png')) ?>"
+                            alt="ClubSphere"
+                            width="240"
+                            height="80"
+                            loading="lazy"
+                        >
+                    </a>
                     <p>A little beyond the classroom.</p>
                 </div>
                 <div class="footer_links">
