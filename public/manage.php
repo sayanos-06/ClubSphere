@@ -1,6 +1,7 @@
 <?php
 require dirname(__DIR__) . '/src/bootstrap.php';
 require dirname(__DIR__) . '/src/activities.php';
+require dirname(__DIR__) . '/src/posters.php';
 $student = require_student(true);
 $pdo = database();
 $id = (int) ($_GET['id'] ?? 0);
@@ -54,6 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $pdo->prepare('UPDATE activities SET cancelled = TRUE WHERE id = ?')->execute([$id]);
             $message = 'Activity cancelled. Registered students will see the updated status.';
         } elseif ($action === 'save') {
+            $poster = uploaded_poster($_FILES['poster'] ?? null);
             $title = trim((string) ($_POST['title'] ?? ''));
             $description = trim((string) ($_POST['description'] ?? ''));
             $venue = trim((string) ($_POST['venue'] ?? ''));
@@ -134,6 +136,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $id = (int) $statement->fetchColumn();
                 $message = 'Your activity is published. Students can now register.';
             }
+            if ($poster) {
+                $pdo->prepare(
+                    'INSERT INTO posters (activity_id, content, mime, hash) VALUES (?, ?, ?, ?) ON CONFLICT (activity_id) DO UPDATE SET content = EXCLUDED.content, mime = EXCLUDED.mime, hash = EXCLUDED.hash'
+                )->execute([$id, $poster['content'], $poster['mime'], $poster['hash']]);
+            } elseif (isset($_POST['remove_poster'])) {
+                $pdo->prepare('DELETE FROM posters WHERE activity_id = ?')->execute([$id]);
+            }
         } else {
             throw new DomainException('Choose a valid action.');
         }
@@ -197,6 +206,7 @@ page_start('Organizer workspace');
             <form
                 method="post"
                 class="validated"
+                enctype="multipart/form-data"
             >
                 <?= token() ?>
                 <input
@@ -240,6 +250,24 @@ page_start('Organizer workspace');
                         maxlength="5000"
                         required
                     ><?= escape($values['description']) ?></textarea>
+                </div>
+                <div class="field">
+                    <label for="poster">Activity poster or image (optional)</label>
+                    <input
+                        id="poster"
+                        name="poster"
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp"
+                        aria-describedby="poster_help"
+                    >
+                    <p id="poster_help" class="muted">JPEG, PNG or WebP, up to 2 MB. A new upload replaces the current poster.</p>
+                    <?php if (!empty($activity['poster_hash'])): ?>
+                        <a href="/poster.php?id=<?= $id ?>&amp;v=<?= escape($activity['poster_hash']) ?>" target="_blank" rel="noopener">View current poster</a>
+                        <label class="poster_remove">
+                            <input type="checkbox" name="remove_poster" value="1">
+                            Remove current poster
+                        </label>
+                    <?php endif; ?>
                 </div>
                 <div class="field">
                     <label for="venue">Venue</label>

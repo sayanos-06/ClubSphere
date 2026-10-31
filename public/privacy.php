@@ -16,6 +16,9 @@
         <p>These details support sign-in, account recovery, duplicate prevention, activity capacity
             and participation records. Public activity pages show aggregate availability, not
             participant details.</p>
+        <p>Organizer-uploaded activity posters are stored in the database and displayed publicly
+            with the activity. Organizers can replace or remove a poster while editing an upcoming
+            activity. Include only images intended for public viewing.</p>
         <h2>Sessions and hosting</h2>
         <p>A required session cookie keeps you signed in. It is cleared when you sign out. The
             website and database run on Render. No advertising or analytics services are embedded.

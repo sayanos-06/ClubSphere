@@ -47,6 +47,9 @@
         <p>Organizer access is assigned by the portal administrator after a student account is
             created. Authorized organizers see “Organize” in the navigation, where they can publish
             activities, edit their own upcoming activities, view participants and record attendance.
+            Each activity can include a JPEG, PNG or WebP poster up to 2 MB. Edit an activity to
+            replace or remove its poster. Students can select the eye icon on its card to view
+            the full image, then close it with the Close poster button or Escape.
         </p>
     </div>
     <div class="paper">

@@ -4,7 +4,6 @@ Student club activity and participation portal for IIT (ISM) Dhanbad.
 
 Live website: https://clubsphere-4fkf.onrender.com
 Repository branch: main
-Existing database API branch: database
 
 ## Scope
 
@@ -30,7 +29,9 @@ No frontend framework, package manager, JavaScript build process, or third-party
 
 ## Database
 
-The main website uses the same existing Render Postgres instance as the database branch. It creates students, clubs, activities, registrations and portal tables. The pre-existing records table and database branch are preserved.
+The main website uses the existing Render Postgres instance. It creates students, clubs, activities, registrations, posters and portal tables. The pre-existing records table is preserved. The repository's default branch is main.
+
+Organizers can attach, replace or remove one JPEG, PNG or WebP poster per activity before it starts. PHP validates the actual image type, a 2 MB size limit and image dimensions. Poster content is stored in PostgreSQL, so it survives container restarts and deployments without a persistent disk. public/poster.php serves the validated image with its MIME type and an ETag. Student cards show the image and an eye control that opens a keyboard-accessible full-poster dialog; a direct image link remains available without JavaScript.
 
 scripts/setup.php applies additive, repeatable setup at container startup. SAMPLE_ACTIVITIES=true inserts six clearly labelled sample activities once. These are project demonstration content, not scheduled institute events. Subsequent deploys do not recreate removed samples or reset their dates.
 

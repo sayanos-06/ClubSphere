@@ -2,6 +2,7 @@
 function activity_query()
 {
     return "SELECT a.*, c.name AS club, c.category, c.initials,
+        (SELECT hash FROM posters p WHERE p.activity_id = a.id) AS poster_hash,
         (SELECT COUNT(*) FROM registrations r WHERE r.activity_id = a.id) AS registered
         FROM activities a JOIN clubs c ON c.id = a.club_id";
 }
@@ -80,14 +81,22 @@ function activity_card($activity)
     $state = activity_state($activity);
     ?>
 <div class="activity_card">
-    <div class="card_art art_<?= escape(strtolower($activity['category'])) ?>">
-        <span class="art_label"><?= escape(strtoupper($activity['category'])) ?></span>
-        <span
-            class="art_initials"
-            aria-hidden="true"
-        ><?= escape($activity['initials']) ?></span>
-
-    </div>
+    <?php if (!empty($activity['poster_hash'])): ?>
+        <div class="card_poster">
+            <img src="/poster.php?id=<?= (int) $activity['id'] ?>&amp;v=<?= escape($activity['poster_hash']) ?>" alt="Poster for <?= escape($activity['title']) ?>" loading="lazy">
+            <a class="poster_eye" href="/poster.php?id=<?= (int) $activity['id'] ?>&amp;v=<?= escape($activity['poster_hash']) ?>" data-poster data-title="<?= escape($activity['title']) ?>" aria-label="View full poster for <?= escape($activity['title']) ?>" target="_blank" rel="noopener">
+                <img src="/assets/eye.svg" alt="" width="22" height="22">
+            </a>
+        </div>
+    <?php else: ?>
+        <div class="card_art art_<?= escape(strtolower($activity['category'])) ?>">
+            <span class="art_label"><?= escape(strtoupper($activity['category'])) ?></span>
+            <span
+                class="art_initials"
+                aria-hidden="true"
+            ><?= escape($activity['initials']) ?></span>
+        </div>
+    <?php endif; ?>
     <div class="card_body">
         <p class="card_club"><?= escape($activity['club']) ?><?= $activity['sample'] ? ' · SAMPLE ACTIVITY' : '' ?></p>
         <h3>

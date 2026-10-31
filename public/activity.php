@@ -34,6 +34,11 @@ page_start($activity['title'], 'activities');
 <div class="activity_detail">
     <p class="eyebrow"><?= escape($activity['category']) ?> · <?= escape($activity['club']) ?></p>
     <h1><?= escape($activity['title']) ?></h1>
+    <?php if (!empty($activity['poster_hash'])): ?>
+        <a class="detail_poster" href="/poster.php?id=<?= $id ?>&amp;v=<?= escape($activity['poster_hash']) ?>" data-poster data-title="<?= escape($activity['title']) ?>" target="_blank" rel="noopener" aria-label="View full activity poster">
+            <img src="/poster.php?id=<?= $id ?>&amp;v=<?= escape($activity['poster_hash']) ?>" alt="Poster for <?= escape($activity['title']) ?>">
+        </a>
+    <?php endif; ?>
     <div class="description"><?= nl2br(escape($activity['description'])) ?></div>
     <div class="paper">
         <h2>Good to know</h2>

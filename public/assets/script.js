@@ -144,3 +144,46 @@ if (registrationForm) {
 if (document.querySelector('[data-count]')) {
     window.addEventListener('focus', refreshPlaces);
 }
+
+const posterLinks = document.querySelectorAll('[data-poster]');
+if (posterLinks.length && typeof HTMLDialogElement !== 'undefined') {
+    const viewer = document.createElement('dialog');
+    viewer.className = 'poster_viewer';
+    viewer.setAttribute('aria-label', 'Activity poster');
+    const close = document.createElement('button');
+    close.type = 'button';
+    close.className = 'button secondary poster_close';
+    close.textContent = 'Close poster';
+    const image = document.createElement('img');
+    viewer.append(close, image);
+    document.body.append(viewer);
+    let trigger;
+    posterLinks.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            trigger = link;
+            image.src = link.href;
+            image.alt = 'Poster for ' + (link.dataset.title || 'this activity');
+            viewer.showModal();
+            document.body.classList.add('poster_open');
+            close.focus();
+        });
+    });
+    close.addEventListener('click', function () {
+        viewer.close();
+    });
+    viewer.addEventListener('click', function (event) {
+        if (event.target === viewer) {
+            const bounds = viewer.getBoundingClientRect();
+            if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) {
+                viewer.close();
+            }
+        }
+    });
+    viewer.addEventListener('close', function () {
+        document.body.classList.remove('poster_open');
+        if (trigger) {
+            trigger.focus();
+        }
+    });
+}

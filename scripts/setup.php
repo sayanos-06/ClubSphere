@@ -46,6 +46,12 @@ try {
         registered_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
         UNIQUE (student_id, activity_id)
     )");
+    $pdo->exec("CREATE TABLE IF NOT EXISTS posters (
+        activity_id BIGINT PRIMARY KEY REFERENCES activities(id) ON DELETE CASCADE,
+        content TEXT NOT NULL,
+        mime VARCHAR(30) NOT NULL,
+        hash VARCHAR(64) NOT NULL
+    )");
     $pdo->exec('CREATE INDEX IF NOT EXISTS registrations_activity ON registrations(activity_id)');
     $pdo->exec('CREATE INDEX IF NOT EXISTS activities_date ON activities(starts_at)');
     $pdo->exec(
