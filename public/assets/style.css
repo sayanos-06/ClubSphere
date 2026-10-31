@@ -6,7 +6,7 @@ body {
     background: #fbfaf7;
     color: #292924;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 1.65;
 }
 a {
@@ -69,7 +69,7 @@ h3 {
     padding: 9px 0;
     color: #f8efe7;
     background: #5d0207;
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 1.8px;
 }
 .institute_right {
@@ -126,7 +126,7 @@ h3 {
 }
 .nav > a {
     color: #595b52;
-    font-size: 13px;
+    font-size: 16px;
     max-width: 90%;
     overflow-wrap: anywhere;
 }
@@ -145,7 +145,7 @@ button.primary {
     background: #5d0207;
     color: #fffaf3;
     border-radius: 4px;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: bold;
     text-align: center;
 }
@@ -169,7 +169,7 @@ button.primary:hover {
     border: 0;
     padding: 0;
     color: #5d0207;
-    font-size: 13px;
+    font-size: 16px;
     text-decoration: underline;
 }
 .inline {
@@ -178,13 +178,13 @@ button.primary:hover {
 .eyebrow {
     color: #5d0207;
     letter-spacing: 2px;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: bold;
     margin-bottom: 18px;
 }
 .muted {
     color: #73746a;
-    font-size: 13px;
+    font-size: 16px;
 }
 .notice {
     padding: 15px 20px;
@@ -215,7 +215,7 @@ button.primary:hover {
 }
 label {
     display: block;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: bold;
     margin-bottom: 6px;
 }
@@ -245,14 +245,14 @@ textarea {
     display: block;
     margin-top: 5px;
     color: #73746a;
-    font-size: 11px;
+    font-size: 14px;
 }
 .wide {
     width: 100%;
 }
 .form_footer {
     margin: 22px 0 0;
-    font-size: 13px;
+    font-size: 16px;
     text-align: center;
 }
 .password_field {
@@ -304,7 +304,7 @@ textarea {
 }
 .footer_brand p,
 .footer_links p {
-    font-size: 11px;
+    font-size: 14px;
     color: #77776e;
     margin: 6px 0;
 }
@@ -313,7 +313,7 @@ textarea {
 }
 .footer_links a {
     margin-right: 23px;
-    font-size: 12px;
+    font-size: 15px;
     color: #585b51;
 }
 .empty {
@@ -376,7 +376,8 @@ textarea {
     font-weight: 400;
 }
 .hero_description {
-    max-width: 465px;
+    max-width: 520px;
+    font-size: 20px;
     color: #686c61;
     line-height: 1.8;
     margin-bottom: 28px;
@@ -385,10 +386,10 @@ textarea {
     margin: 15px 20px;
     display: inline-block;
     color: #494e43;
-    font-size: 12px;
+    font-size: 16px;
 }
 .hero_note {
-    font-size: 10px;
+    font-size: 14px;
     color: #86877c;
     margin-top: 24px;
 }
@@ -409,7 +410,7 @@ textarea {
 }
 .visual_top,
 .visual_bottom {
-    font-size: 9px;
+    font-size: 12px;
     letter-spacing: 1.5px;
 }
 .visual_top span,
@@ -447,7 +448,7 @@ textarea {
     padding: 5px 10px;
     margin: 3px;
     display: inline-block;
-    font-size: 8px;
+    font-size: 11px;
     letter-spacing: 1.2px;
 }
 .visual_bottom {
@@ -463,7 +464,7 @@ textarea {
     display: inline-block;
     margin: 8px 38px 8px 0;
     color: #7e8174;
-    font-size: 12px;
+    font-size: 16px;
 }
 .campus_strip strong {
     font-family: Georgia, serif;
@@ -500,7 +501,7 @@ textarea {
     width: 310px;
 }
 .filter_field {
-    width: 155px;
+    width: 185px;
 }
 .filters > button {
     margin: 5px 0;
@@ -508,17 +509,17 @@ textarea {
     padding: 12px 15px;
 }
 .filters label {
-    font-size: 10px;
+    font-size: 14px;
     color: #6f7367;
 }
 .filters input,
 .filters select {
-    font-size: 12px;
+    font-size: 16px;
 }
 .results_line {
     margin: 22px 0;
     color: #828578;
-    font-size: 11px;
+    font-size: 15px;
 }
 .results_line a {
     float: right;
@@ -563,7 +564,7 @@ textarea {
     color: #4f6a58;
 }
 .art_label {
-    font-size: 8px;
+    font-size: 12px;
     letter-spacing: 2px;
     display: block;
 }
@@ -587,7 +588,7 @@ textarea {
 .card_club {
     margin-bottom: 8px;
     color: #5d0207;
-    font-size: 10px;
+    font-size: 13px;
     font-weight: bold;
     letter-spacing: 0.6px;
 }
@@ -602,12 +603,12 @@ textarea {
     color: #31372d;
 }
 .card_description {
-    color: #7e8175;
-    font-size: 12px;
-    min-height: 60px;
+    color: #626b59;
+    font-size: 16px;
+    min-height: 112px;
 }
 .card_meta {
-    font-size: 11px;
+    font-size: 15px;
     margin: 7px 0;
     color: #656c5e;
 }
@@ -618,17 +619,17 @@ textarea {
     border-top: 1px solid #eeece4;
     padding-top: 16px;
     margin-top: 18px;
-    font-size: 10px;
+    font-size: 15px;
 }
 .seat_count {
     color: #4f6444;
-    font-size: 12px;
+    font-size: 16px;
 }
 .card_bottom > a {
     float: right;
 }
 .status {
-    font-size: 10px;
+    font-size: 14px;
     margin: 6px 0 0;
     color: #787b70;
 }
@@ -646,11 +647,11 @@ textarea {
 }
 .join_banner p {
     color: #76806a;
-    font-size: 13px;
+    font-size: 17px;
 }
 .join_banner .eyebrow {
     color: #68775b;
-    font-size: 9px;
+    font-size: 12px;
 }
 .club_card {
     display: inline-block;
@@ -674,16 +675,16 @@ textarea {
     font-size: 29px;
 }
 .club_card p:not(.eyebrow) {
-    font-size: 13px;
+    font-size: 16px;
     color: #767c6e;
     min-height: 65px;
 }
 .club_card a {
-    font-size: 12px;
+    font-size: 16px;
 }
 .breadcrumb {
     margin: 32px 0;
-    font-size: 12px;
+    font-size: 15px;
     color: #86897d;
 }
 .activity_detail {
@@ -714,7 +715,7 @@ textarea {
     font-size: 35px;
 }
 .booking p {
-    font-size: 13px;
+    font-size: 16px;
 }
 hr {
     border: 0;
@@ -723,7 +724,7 @@ hr {
 }
 .detail_link {
     display: block;
-    font-size: 12px;
+    font-size: 16px;
     margin: 17px 0;
 }
 .registration_row {
@@ -738,7 +739,7 @@ hr {
     vertical-align: top;
     color: #5d0207;
     background: #f1e8e3;
-    font-size: 11px;
+    font-size: 14px;
 }
 .date_tile strong {
     display: block;
@@ -764,7 +765,7 @@ hr {
 }
 .badge {
     display: inline-block;
-    font-size: 10px;
+    font-size: 14px;
     padding: 3px 9px;
     background: #ebefdf;
     color: #576d46;
@@ -773,14 +774,14 @@ hr {
 .registration_actions {
     display: inline-block;
     vertical-align: top;
-    font-size: 11px;
+    font-size: 15px;
     margin-top: 5px;
 }
 .registration_actions form {
     margin-top: 12px;
 }
 .registration_actions button {
-    font-size: 11px;
+    font-size: 15px;
 }
 .organizer_main {
     display: inline-block;
@@ -804,7 +805,7 @@ hr {
     margin-top: 20px;
 }
 .owned_activity > a {
-    font-size: 14px;
+    font-size: 16px;
 }
 .table_scroll {
     overflow-x: auto;
@@ -813,7 +814,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
-    font-size: 12px;
+    font-size: 16px;
 }
 th,
 td {
@@ -822,7 +823,7 @@ td {
     vertical-align: top;
 }
 th {
-    font-size: 10px;
+    font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: #747b6a;
@@ -831,7 +832,7 @@ th {
     padding: 12px 18px;
     background: #f3ecdc;
     border: 1px solid #e3d5b4;
-    font-size: 12px;
+    font-size: 15px;
     color: #786332;
     margin-bottom: 25px;
 }
@@ -842,4 +843,56 @@ th {
     font-family: monospace;
     font-size: 16px;
     overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 17px;
+    }
+    .institute {
+        letter-spacing: 1.2px;
+    }
+    .institute_right {
+        display: block;
+        float: none;
+        margin-top: 4px;
+    }
+    .nav > a,
+    .nav > form {
+        margin: 6px 8px;
+    }
+    .hero_copy {
+        padding-right: 0;
+    }
+    .hero_description {
+        font-size: 18px;
+    }
+    .search_field,
+    .filter_field {
+        display: block;
+        width: 100%;
+        margin: 0 0 16px;
+    }
+    .filters > button {
+        width: 100%;
+    }
+    .results_line > span {
+        display: block;
+    }
+    .results_line a {
+        display: inline-block;
+        float: none;
+        margin-top: 8px;
+    }
+    .activity_detail {
+        padding-right: 0;
+    }
+    .registration_info {
+        width: 100%;
+        margin-top: 14px;
+    }
+    .registration_actions {
+        display: block;
+        margin-top: 16px;
+    }
 }
