@@ -54,8 +54,8 @@ function page_start($title, $active = '')
                         class="brand_logo"
                         src="<?= escape(asset_url('assets/logo.png')) ?>"
                         alt="ClubSphere"
-                        width="300"
-                        height="100"
+                        width="240"
+                        height="80"
                     >
                 </a>
                 <nav
@@ -129,8 +129,8 @@ function page_end()
                             class="footer_logo"
                             src="<?= escape(asset_url('assets/logo.png')) ?>"
                             alt="ClubSphere"
-                            width="240"
-                            height="80"
+                            width="210"
+                            height="70"
                             loading="lazy"
                         >
                     </a>

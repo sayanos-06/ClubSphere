@@ -89,15 +89,15 @@ h3 {
 }
 .brand_logo {
     display: block;
-    width: 300px;
-    height: 100px;
+    width: 240px;
+    height: 80px;
     max-width: 100%;
     object-fit: contain;
 }
 .footer_logo {
     display: block;
-    width: 240px;
-    height: 80px;
+    width: 210px;
+    height: 70px;
     max-width: 100%;
     object-fit: contain;
 }
