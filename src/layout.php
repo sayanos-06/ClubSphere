@@ -1,4 +1,10 @@
 <?php
+function asset_url($file)
+{
+    $version = substr(hash_file('sha256', dirname(__DIR__) . '/public/' . $file), 0, 12);
+    return '/' . $file . '?v=' . $version;
+}
+
 function page_start($title, $active = '')
 {
     $student = current_student();
@@ -25,7 +31,7 @@ function page_start($title, $active = '')
         >
         <link
             rel="stylesheet"
-            href="/assets/style.css"
+            href="<?= escape(asset_url('assets/style.css')) ?>"
         >
     </head>
     <body>
@@ -128,7 +134,7 @@ function page_end()
                 </div>
             </div>
         </footer>
-        <script src="/assets/script.js"></script>
+        <script src="<?= escape(asset_url('assets/script.js')) ?>"></script>
     </body>
 </html>
 <?php
