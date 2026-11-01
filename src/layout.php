@@ -45,7 +45,7 @@ function page_start($title, $active = '')
             </div>
         </div>
         <header class="header">
-            <div class="container">
+            <div class="container navigation">
                 <a
                     class="brand"
                     href="/index.php"
@@ -62,45 +62,51 @@ function page_start($title, $active = '')
                     class="nav"
                     aria-label="Main navigation"
                 >
-                    <a
-                        class="<?= $active === 'activities' ? 'active' : '' ?>"
-                        href="/index.php"
-                    >Discover</a>
-                    <a
-                        class="<?= $active === 'clubs' ? 'active' : '' ?>"
-                        href="/clubs.php"
-                    >The clubs</a>
-                    <?php if ($student): ?>
+                    <div class="nav_links">
                         <a
-                            class="<?= $active === 'registrations' ? 'active' : '' ?>"
-                            href="/registrations.php"
-                        >My registrations</a>
-                        <?php if ($student['role'] === 'organizer'): ?>
-                            <a href="/manage.php">Organize</a>
+                            class="<?= $active === 'activities' ? 'active' : '' ?>"
+                            href="/index.php"
+                        >Discover</a>
+                        <a
+                            class="<?= $active === 'clubs' ? 'active' : '' ?>"
+                            href="/clubs.php"
+                        >The clubs</a>
+                        <?php if ($student): ?>
+                            <a
+                                class="<?= $active === 'registrations' ? 'active' : '' ?>"
+                                href="/registrations.php"
+                            >My registrations</a>
+                            <?php if ($student['role'] === 'organizer'): ?>
+                                <a href="/manage.php">Organize</a>
+                            <?php endif; ?>
                         <?php endif; ?>
-                        <a
-                            class="account_link"
-                            href="/profile.php"
-                        ><?= escape(explode(' ', $student['name'])[0]) ?></a>
-                        <form
-                            class="inline"
-                            action="/logout.php"
-                            method="post"
-                        >
-                            <?= token() ?>
-                            <button
-                                class="text_button"
-                                type="submit"
-                            >Sign out</button>
-                        </form>
-                    <?php else: ?>
-                        <a href="/login.php">Sign in</a>
-                        <a
-                            class="button small"
-                            href="/signup.php"
-                        >Join ClubSphere
-                        </a>
-                    <?php endif; ?>
+                    </div>
+                    <div class="nav_account">
+                        <?php if ($student): ?>
+                            <a
+                                class="account_link"
+                                href="/profile.php"
+                            ><?= escape(explode(' ', $student['name'])[0]) ?></a>
+                            <form
+                                class="inline"
+                                action="/logout.php"
+                                method="post"
+                            >
+                                <?= token() ?>
+                                <button
+                                    class="text_button"
+                                    type="submit"
+                                >Sign out</button>
+                            </form>
+                        <?php else: ?>
+                            <a href="/login.php">Sign in</a>
+                            <a
+                                class="button small"
+                                href="/signup.php"
+                            >Join ClubSphere
+                            </a>
+                        <?php endif; ?>
+                    </div>
                 </nav>
             </div>
         </header>

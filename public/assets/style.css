@@ -81,7 +81,18 @@ h3 {
     border-bottom: 1px solid #e4e0d8;
     background: #fffefa;
 }
+.institute > .container,
+.navigation {
+    max-width: 1400px;
+    width: 94%;
+}
+.navigation {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
 .brand {
+    flex-shrink: 0;
     display: inline-block;
     vertical-align: middle;
     margin-right: 28px;
@@ -102,22 +113,33 @@ h3 {
     object-fit: contain;
 }
 .nav {
-    display: inline-block;
-    vertical-align: middle;
-    max-width: 100%;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    min-width: 0;
 }
-.nav > a,
-.nav > form {
-    margin: 6px 12px;
-    display: inline-block;
+.nav_links,
+.nav_account {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 24px;
 }
-.nav > a {
+.nav_account {
+    margin-left: auto;
+}
+.nav a,
+.nav form {
+    margin: 0;
+}
+.nav a {
     color: #595b52;
     font-size: 16px;
-    max-width: 90%;
     overflow-wrap: anywhere;
 }
-.nav > a.active {
+.nav a.active {
     color: #5d0207;
     border-bottom: 2px solid #5d0207;
 }
@@ -921,9 +943,17 @@ th {
         float: none;
         margin-top: 4px;
     }
-    .nav > a,
-    .nav > form {
-        margin: 6px 8px;
+    .brand {
+        margin-right: 0;
+    }
+    .nav {
+        flex-basis: 100%;
+        padding: 8px 0;
+        gap: 16px;
+    }
+    .nav_links,
+    .nav_account {
+        gap: 12px 18px;
     }
     .hero_copy {
         padding-right: 0;
